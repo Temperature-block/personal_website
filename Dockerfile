@@ -10,7 +10,7 @@ RUN apt-get -y update  && apt-get install -y hugo
 
 RUN hugo
 
-RUN apt install curl
+RUN apt-get -y install curl
 
 RUN ls
 
