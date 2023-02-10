@@ -24,6 +24,6 @@ RUN apt update
 
 RUN apt install caddy
 
-RUN  cd /public
+WORKDIR /website/public
 
 CMD ["caddy file-server"]
