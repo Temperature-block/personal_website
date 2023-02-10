@@ -3,7 +3,7 @@ FROM ubuntu:latest
 # Setting the working directory to /app
 WORKDIR /website
 
-# COPY ./public /website
+COPY . /website
 
 # Getting the updates for Ubuntu and installing python into our environment
 RUN apt-get -y update  && apt-get install -y hugo
