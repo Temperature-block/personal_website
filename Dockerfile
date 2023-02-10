@@ -10,7 +10,7 @@ RUN apt-get -y update  && apt-get install -y hugo
 
 RUN hugo
 
-RUN wget https://caddyserver.com/api/download?os=linux&arch=amd64&idempotency=3167728520201
+RUN apt install curl
 
 RUN ls
 
