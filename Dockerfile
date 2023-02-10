@@ -24,6 +24,6 @@ RUN apt update
 
 RUN apt install caddy
 
-RUN echo pwd
+RUN  pwd
 
 CMD ["caddy file-server --root ./public"]
