@@ -10,12 +10,18 @@ RUN apt-get -y update  && apt-get install -y hugo
 
 RUN hugo
 
-RUN cd ./public
-
 RUN wget https://caddyserver.com/api/download?os=linux&arch=amd64&idempotency=3167728520201
 
 RUN ls
 
-RUN chmod +x caddy*
+RUN  apt install -y debian-keyring debian-archive-keyring apt-transport-https
 
-CMD ["./caddy*", "file-server"]
+RUN curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+
+RUN curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+
+RUN apt update
+
+RUN apt install caddy
+
+CMD ["caddy file-server --root ./public*"]
