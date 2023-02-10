@@ -26,4 +26,4 @@ RUN apt install caddy
 
 WORKDIR /website/public
 
-RUN caddy file-server
+CMD caddy file-server
