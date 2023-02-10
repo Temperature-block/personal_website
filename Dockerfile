@@ -14,6 +14,8 @@ RUN cd ./public
 
 RUN wget https://caddyserver.com/api/download?os=linux&arch=amd64&idempotency=3167728520201
 
+RUN ls
+
 RUN chmod +x caddy*
 
 CMD ["./caddy*", "file-server"]
