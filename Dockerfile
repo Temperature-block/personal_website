@@ -26,4 +26,4 @@ RUN apt install caddy
 
 WORKDIR /website/public
 
-CMD caddy file-server
+CMD caddy file-server --domain shft.in
